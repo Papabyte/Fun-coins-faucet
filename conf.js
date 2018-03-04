@@ -9,7 +9,7 @@ exports.bLight = true;
 exports.storage = 'sqlite';
 
 exports.hub = 'byteball.org/bb';
-exports.deviceName = 'Faucet';
+exports.deviceName = 'Fun coins faucet';
 exports.permanent_pairing_secret = '0000';
 exports.control_addresses = [''];
 exports.payout_address = '';
