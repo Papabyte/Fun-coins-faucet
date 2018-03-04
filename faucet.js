@@ -47,9 +47,7 @@ eventBus.on('headless_wallet_ready', function() {
 		console.log("please specify admin_email and from_email in your " + desktopApp.getAppDataDir() + '/conf.json');
 		process.exit(1);
 	}
-	
-	
-	
+
 	
 	headlessWallet.readSingleWallet(function(_wallet_id) {
 		wallet_id = _wallet_id;
@@ -62,13 +60,11 @@ eventBus.on('headless_wallet_ready', function() {
 				arrPeers[index].assetsSent = [];
 			}
 
-
 		},
 		coolDown
 
 	);
 });
-
 
 
 function prepareBalanceText(handleBalanceText) {
@@ -111,12 +107,9 @@ function processTxt(from_address, text) {
 			arrPeers[from_address].step = 'giveAdress';
 			device.sendMessageToDevice(from_address, 'text', 'Insert your address to receive ' + text + " (click on  '...'  bottom left)\n➡" + getTxtCommandButton("cancel"));
 
-
-
 		} else {
 			device.sendMessageToDevice(from_address, 'text', "Sorry you've already received enough tokens.");
 		}
-
 
 		return;
 	}
@@ -129,7 +122,6 @@ function processTxt(from_address, text) {
 				arrPeers[from_address].address = text.trim();
 				arrPeers[from_address].assetsSent.push(arrPeers[from_address].assetToSend);
 				notifications.notifyAdmin("Someone received " + arrPeers[from_address].assetToSend, from_address + " received " + arrPeers[from_address].assetToSend);
-
 
 				if (Object.keys(assets).length > arrPeers[from_address].assetsSent.length) {
 					device.sendMessageToDevice(from_address, 'text', 'Would you like to receive another token? \n➡ ' + getTxtCommandButton("yes") + ' \n➡ ' + getTxtCommandButton("no"));
@@ -160,8 +152,6 @@ function processTxt(from_address, text) {
 		}
 	}
 
-	1
-
 
 	var assetsList = '';
 
@@ -177,9 +167,7 @@ function processTxt(from_address, text) {
 
 		device.sendMessageToDevice(from_address, 'text', "Sorry, you've already received enough tokens");
 
-
 	}
-
 
 }
 
@@ -207,7 +195,6 @@ eventBus.on('text', function(from_address, text) {
 	processTxt(from_address, text);
 
 });
-
 
 
 
