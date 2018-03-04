@@ -1,0 +1,19 @@
+{
+	"name": "Fun-coin-faucet",
+	"description": "Get free tokens and play with them",
+	"author": "Papabyte",
+	"version": "0.1.0",
+	"main": "faucet.js",
+	"keywords": [
+		"byteball"
+	],
+	"license": "MIT",
+	"browser": {
+		"request": "browser-request",
+		"secp256k1": "secp256k1/js"
+	},
+	"dependencies": {
+		"byteballcore": "git+https://github.com/byteball/byteballcore.git",
+  		"headless-byteball": "git+https://github.com/byteball/headless-byteball.git"
+}
+}
