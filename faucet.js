@@ -1,11 +1,11 @@
 "use strict";
 
-var desktopApp = require('byteballcore/desktop_app.js');
-var conf = require('byteballcore/conf.js');
-var db = require('byteballcore/db.js');
-var eventBus = require('byteballcore/event_bus.js');
-var headlessWallet = require('headless-byteball');
-var validationUtils = require("byteballcore/validation_utils.js");
+var desktopApp = require('ocore/desktop_app.js');
+var conf = require('ocore/conf.js');
+var db = require('ocore/db.js');
+var eventBus = require('ocore/event_bus.js');
+var headlessWallet = require('headless-obyte');
+var validationUtils = require("ocore/validation_utils.js");
 var notifications = require('./notifications.js');
 var wallet_id;
 
@@ -68,7 +68,7 @@ eventBus.on('headless_wallet_ready', function() {
 
 
 function prepareBalanceText(handleBalanceText) {
-	var Wallet = require('byteballcore/wallet.js');
+	var Wallet = require('ocore/wallet.js');
 	Wallet.readBalance(wallet_id, function(assocBalances) {
 		var arrLines = [];
 		for (var asset in assocBalances) {
@@ -84,7 +84,7 @@ function prepareBalanceText(handleBalanceText) {
 }
 
 function processTxt(from_address, text) {
-	var device = require('byteballcore/device.js');
+	var device = require('ocore/device.js');
 
 	if (!arrPeers[from_address]) {
 		arrPeers[from_address] = {};
@@ -174,7 +174,7 @@ function processTxt(from_address, text) {
 
 function sendThankYouMsg(from_address) {
 
-	var device = require('byteballcore/device.js');
+	var device = require('ocore/device.js');
 
 	setTimeout(function() {
 		device.sendMessageToDevice(from_address, 'text', 'Thank you very much. Now have fun playing with textcoins, smart contracts etc.');
