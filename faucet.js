@@ -30,7 +30,7 @@ var assets = {
 		txtAmount: '12000.77'
 	},
 	'Zangos': {
-		hash: 'O1DbJWbZJfKhjZQYH5RrdRQ2ojMuo2WiaKbjIWSWd4E=',
+		hash: '3qacTCGOkrzYRyekq8yRIT/Pc30Pb/BcmTEHDY/aTz0=',
 		qty: 9900099,
 		txtAmount: '99000.99'
 	},
@@ -162,7 +162,7 @@ function processTxt(from_address, text) {
 				assetsList += getTxtCommandButton(assets[index].txtAmount + ' ' + index, index) + "\n";
 			}
 		}
-		device.sendMessageToDevice(from_address, 'text', 'Tangos and Tingos are new tokens on the Byteball platform with zero monetary value, for your zero-risk practice with textcoin, smart contracts etc. Zangos and Zingos are like Tangos and Tingos but with decimal points. See https://wiki.byteball.org/Fun-coins for all details.\n\n Select the token you want to receive:\n' + assetsList);
+		device.sendMessageToDevice(from_address, 'text', 'Tangos and Tingos are new tokens on the Obyte platform with zero monetary value, for your zero-risk practice with textcoin, smart contracts etc. Zangos and Zingos are like Tangos and Tingos but with decimal points. See https://wiki.obyte.org/Fun-coins for all details.\n\n Select the token you want to receive:\n' + assetsList);
 	} else {
 
 		device.sendMessageToDevice(from_address, 'text', "Sorry, you've already received enough tokens");
